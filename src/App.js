@@ -25,18 +25,16 @@ class App extends React.Component {
 			.then(data => {
 				return this.setState({
 					errorMessage: false,
-					report: data.data
+					report: data.data,
+					cityName: ""
 				});
 			})
 			.catch(error => {
 				this.setState({
-					errorMessage: true
+					errorMessage: true,
+					cityName: ""
 				});
 			});
-
-		this.setState({
-			cityName: ""
-		});
 	};
 	render() {
 		return (
