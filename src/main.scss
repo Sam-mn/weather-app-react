@@ -4,8 +4,11 @@ $body-color: #fefefe;
 @import "~bootstrap/scss/bootstrap";
 
 .error {
-	text-align: center;
-	color: red;
+	color: #856404;
+	background-color: #fff3cd;
+	border-color: #ffeeba;
+	padding: 12px 20px;
+	border-radius: 0.25rem;
 }
 
 .weather-list {

@@ -11,7 +11,7 @@ const WeatherReport = props => {
 						The temperature in {name} is {Math.round(main.temp)}
 						&deg; C right now, with a humidity of {main.humidity} %.
 					</h5>
-					<p>Current weather is:</p>
+					<h6>Current weather is:</h6>
 					<Conditions weather={weather} />
 				</div>
 			</div>

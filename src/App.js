@@ -7,7 +7,8 @@ class App extends React.Component {
 	state = {
 		errorMessage: false,
 		report: null,
-		cityName: ""
+		cityName: "",
+		message: ""
 	};
 	handleChange = e => {
 		this.setState({
@@ -30,9 +31,12 @@ class App extends React.Component {
 				});
 			})
 			.catch(error => {
-				this.setState({
-					errorMessage: true,
-					cityName: ""
+				this.setState(prevState => {
+					return {
+						errorMessage: true,
+						message: `Oh, sorry, something went wrong. You sure the place "${prevState.cityName}" exists?`,
+						cityName: ""
+					};
 				});
 			});
 	};
@@ -53,10 +57,7 @@ class App extends React.Component {
 					/>
 
 					{this.state.errorMessage ? (
-						<h1 className="error">
-							The city doesn't exist in our data, please try again
-							with another City name.
-						</h1>
+						<div className="error">{this.state.message}</div>
 					) : this.state.report ? (
 						<WeatherReport report={this.state.report} />
 					) : (
