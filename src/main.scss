@@ -1,0 +1,14 @@
+$body-bg: #222;
+$body-color: #fefefe;
+
+@import "~bootstrap/scss/bootstrap";
+
+.error {
+	text-align: center;
+	color: red;
+}
+
+.weather-list {
+	list-style: none;
+	padding: 0;
+}
